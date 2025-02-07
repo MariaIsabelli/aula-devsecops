@@ -33,7 +33,10 @@ jobs:
       
       steps:
       - name: Test
-        run: echo "Test" 
+        uses: MariaIsabelli/aula-devsecops@main
+        with:
+          a: ${{ secrets.SECRET_A }}
+          b: 4
   deploy:
       runs-on: ubuntu-latest
       needs: test
